@@ -65,7 +65,7 @@
 
       #girl,
       #boy {
-        margin: 0px 20px;
+        margin: 0px 10px;
       }
 
       .button {
@@ -126,7 +126,9 @@
             name="checkbox"
             id="checkbox"
             onclick="showPassword()"
+            style="cursor: pointer"
           />
+          <label for="checkbox" style="cursor: pointer">Lihat</label>
         </div>
         <label>Tanggal lahir</label>
         <div class="tanggal">
@@ -166,18 +168,18 @@
           </select>
           <select name="bulan" id="bulan" required>
             <option value="">bulan...</option>
-            <option value="JANUARI">JANUARI</option>
-            <option value="FEBRUARI">FEBRUARI</option>
-            <option value="MARET">MARET</option>
-            <option value="APRIL">APRIL</option>
+            <option value="JANUARI">JAN</option>
+            <option value="FEBRUARI">FEB</option>
+            <option value="MARET">MAR</option>
+            <option value="APRIL">APR</option>
             <option value="MEI">MEI</option>
-            <option value="JUNI">JUNI</option>
-            <option value="JULI">JULI</option>
-            <option value="AGUSTUS">AGUSTUS</option>
-            <option value="SEPTEMBER">SEPTEMBER</option>
-            <option value="OKTOBER">OKTOBER</option>
-            <option value="NOVEMBER">NOVEMBER</option>
-            <option value="DESEMBER">DESEMBER</option>
+            <option value="JUNI">JUN</option>
+            <option value="JULI">JUL</option>
+            <option value="AGUSTUS">AGU</option>
+            <option value="SEPTEMBER">SEP</option>
+            <option value="OKTOBER">OKT</option>
+            <option value="NOVEMBER">NOV</option>
+            <option value="DESEMBER">DES</option>
           </select>
           <select name="tahun" id="tahun" required>
             <option value="">tahun...</option>
@@ -230,7 +232,7 @@
         </div>
         <label>Jenis Kelamin</label>
         <div class="gender">
-          <div style="border: 1px solid #4b4b4b; display: flex">
+          <div style="border: 1px solid #4b4b4b; display: flex;">
             <label for="girl">Perempuan</label>
             <input
               type="radio"
@@ -259,7 +261,7 @@
 
     <script>
       function showPassword() {
-        var input = document.getElementById("password");
+        const input = document.getElementById("password");
 
         if (input.type === "password") {
           input.type = "text";
