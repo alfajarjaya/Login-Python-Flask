@@ -25,10 +25,10 @@
   <body>
     <div style="border: 1px solid #000; padding: 40px 20px; background: #fff">
       <h2>Registrasi Berhasil!</h2>
-      <p>Nama Depan : {{ nama_depan }}</p>
-      <p>Nama Belakang : {{ nama_belakang }}</p>
-      <p>Email / no Hp : {{ email_or_noHp }}</p>
-      <p>Tanggal Lahir : {{ tanggal }} {{ bulan }} {{ tahun }}</p>
+      <p>Nama Depan : {{ depan }}</p>
+      <p>Nama Belakang : {{ belakang }}</p>
+      <p>Email / no Hp : {{ seluler }}</p>
+      <p>Tanggal Lahir : {{ tgl }} {{ bln }} {{ thn }}</p>
       <p>Jenis Kelamin : {{ gender }}</p>
       <p style="display: none" id="passwd">Password : {{password}}</p>
       <div style="display: flex; justify-content: center">
@@ -45,7 +45,7 @@
           Sembunyikan password
         </button>
       </div>
-      <div style="margin: 20px 0px;display:flex;justify-content:center;">
+      <div style="margin: 20px 0px; display: flex; justify-content: center">
         <button type="button" id="back" class="btn">perbarui Data</button>
       </div>
     </div>
@@ -55,29 +55,25 @@
       const passwd = document.getElementById("passwd");
       const btnPasswd = document.getElementById("buttonRemovePasswd");
 
-      if (
-        btn.addEventListener("click", () => {
-          btn.style.display = "none";
-          btnPasswd.style.display = "block";
-          passwd.style.display = "block";
-        })
-      );
-      else {
+      btn.addEventListener("click", () => {
+        btn.style.display = "none";
+        btnPasswd.style.display = "block";
+        passwd.style.display = "block";
+      });
+
+      btnPasswd.addEventListener("click", () => {
+        btn.style.display = "block";
         btnPasswd.style.display = "none";
         passwd.style.display = "none";
-      }
-
-      if (
-        btnPasswd.addEventListener("click", () => {
-          btn.style.display = "block";
-          btnPasswd.style.display = "none";
-          passwd.style.display = "none";
-        })
-      );
-
-      document.getElementById("back").addEventListener("click", () => {
-        window.location.href = "http://127.0.0.1:5000/";
       });
+
+      const btnBack = document.getElementById("back");
+
+      btnBack.addEventListener("click", () => {
+        window.location.href = "/";
+      });
+
+      btnBack.style.background = "blue";
     </script>
   </body>
 </html>
