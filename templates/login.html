@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="mobile-phone dekstop">
+    <meta name="qrCode" content="generate-qr-code">
+    <title>Login</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 50px;
+        }
+
+        .login {
+            display: grid;
+            justify-content: center;
+            margin: 30px 0px;
+        }
+
+        label {
+            font-size: 20px;
+        }
+
+        input {
+            padding: 7px 5px;
+            width: 400px;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+            margin: 10px 0px;
+        }
+    </style>
+</head>
+<body>
+    <div style="border: 1px solid #000; padding: 30px">
+        <h1>HII WELCOME !</h1>
+        <form action="/templates" method="post">
+        <div class="login">
+            <label for="user">User Name : </label>
+            <input type="text" name="user" id="user" placeholder="username" required>
+            <br>
+            <label for="password">Password : </label>
+            <input type="password" name="password" id="password" placeholder="password">
+            <div class="error">{{ error }}</div>
+        </div>
+        <button type="submit">Login</button>
+        </form>
+
+        <style>
+            button {
+                padding: 7px 15px;
+                border: none;
+                background: green;
+                color: #fff;
+                cursor: pointer;
+            }
+        </style>
+    </div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daftar</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: rgb(236, 236, 236);
+      }
+
+      .btn {
+        padding: 7px 10px;
+        background: green;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="border: 1px solid #000; padding: 40px 20px; background: #fff">
+      <h2>Registrasi Berhasil!</h2>
+      <p>Nama Depan : {{ depan }}</p>
+      <p>Nama Belakang : {{ belakang }}</p>
+      <p>Email / no Hp : {{ seluler }}</p>
+      <p>Tanggal Lahir : {{ tgl }} {{ bln }} {{ thn }}</p>
+      <p>Jenis Kelamin : {{ gender }}</p>
+      <p style="display: none" id="passwd">Password : {{password}}</p>
+      <div style="display: flex; justify-content: center">
+        <button type="button" id="button" name="button" class="btn">
+          Lihat Password
+        </button>
+        <button
+          type="button"
+          id="buttonRemovePasswd"
+          name="btn"
+          class="btn"
+          style="display: none"
+        >
+          Sembunyikan password
+        </button>
+      </div>
+      <div style="margin: 20px 0px; display: flex; justify-content: center">
+        <button type="button" id="back" class="btn">perbarui Data</button>
+      </div>
+    </div>
+
+    <script>
+      const btn = document.getElementById("button");
+      const passwd = document.getElementById("passwd");
+      const btnPasswd = document.getElementById("buttonRemovePasswd");
+
+      btn.addEventListener("click", () => {
+        btn.style.display = "none";
+        btnPasswd.style.display = "block";
+        passwd.style.display = "block";
+      });
+
+      btnPasswd.addEventListener("click", () => {
+        btn.style.display = "block";
+        btnPasswd.style.display = "none";
+        passwd.style.display = "none";
+      });
+
+      const btnBack = document.getElementById("back");
+
+      btnBack.addEventListener("click", () => {
+        window.location.href = "/";
+      });
+
+      btnBack.style.background = "blue";
+    </script>
+  </body>
+</html>
